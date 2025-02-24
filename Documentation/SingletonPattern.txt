@@ -1,0 +1,30 @@
+The Singleton pattern is a design pattern that ensures a class has only one instance and provides a global point of access to that instance.
+In this API, we used it in Database.php to manage the database connection:
+
+private static $instance = null;
+public static function getInstance() {
+    if (self::$instance === null) {
+        self::$instance = new self();
+    }
+    return self::$instance;
+}
+
+Efficient Resource Management:
+Database connections are expensive to create (e.g., establishing a TCP connection, authenticating, and initializing). Using a Singleton ensures only one PDO connection is created and reused across your application, reducing overhead and memory usage.
+
+Global Access:
+It provides a single, predictable way to access the database connection from anywhere in your code (e.g., User.php, Todo.php), avoiding the need to pass the connection object around or create multiple instances.
+
+Scalability for Your Project:
+For a small Todo API, a Singleton is simple and effective. It prevents redundant connections, which is especially important if your API scales to handle many simultaneous requests or if you add more complex operations.
+
+
+
+
+
+Potential Drawbacks (Real-World Considerations)
+Testing: Singletons can make unit testing harder because they introduce global state. In a real-world project, you might mock or inject dependencies instead (e.g., using dependency injection containers like PHP-DI or Laravel’s container).
+
+Scalability: For very large applications or microservices, a Singleton might not scale well if you need multiple database connections or connection pooling. In such cases, you’d use a connection pool or a framework’s database manager (e.g., Doctrine, Laravel Eloquent).
+
+In this Project: For a small Todo API, the Singleton is appropriate and simple, but as it grows, you might consider refactoring to a dependency injection pattern or using a framework with built-in connection management.

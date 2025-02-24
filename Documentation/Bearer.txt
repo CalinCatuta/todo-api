@@ -1,0 +1,9 @@
+A Bearer Token is a type of access token used in authentication, particularly with the OAuth 2.0 protocol and JSON Web Tokens (JWTs).
+It’s a string (often a JWT) that represents the authentication credentials of a user or client, proving they are authorized to access protected resources.
+
+Why We Use "Bearer" Before the Token?
+The term "Bearer" is part of the HTTP Authorization header specification (RFC 6750 for OAuth 2.0). It indicates the type of token being sent. When you include the token in the header as Authorization: Bearer <token>, it tells the server that the token is a "Bearer" token, meaning anyone who possesses it can use it to access resources (hence, "bearer"—it’s carried by the request).
+
+Why "Bearer"?:
+It’s a standard convention in APIs to distinguish different types of authentication schemes (e.g., Basic, Bearer, Digest). Using "Bearer" ensures interoperability with other systems and clients that expect this format.
+It’s human-readable and machine-parseable, making it easy for servers (like your AuthMiddleware.php) to extract and validate the token.

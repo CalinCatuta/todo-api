@@ -1,0 +1,23 @@
+Separation of Concerns (SoC):
+We split the code into Controllers (handling HTTP requests), Models (database operations), Services (business logic like authentication), and Middleware (security layers). This keeps each part focused on its role, making the code easier to maintain and test.
+
+Real-World: In larger projects, SoC extends to microservices, domain-driven design (DDD), or MVC frameworks (e.g., Laravel, Symfony).
+
+Scalability and Reusability:
+We used reusable classes (e.g., Database Singleton, AuthService for JWT) to avoid redundancy. Think about how your code will handle growth—e.g., more users, features, or traffic.
+
+Real-World: Design for future scalability (e.g., caching, load balancers, horizontal scaling) but start simple, like we did with your Todo API.
+
+Security First:
+We used JWT for stateless authentication, hashed passwords with password_hash, and PDO prepared statements to prevent SQL injection. Always prioritize security, especially for user data and authentication.
+
+Real-World: Add rate limiting, input validation, CSRF protection, and regular security audits.
+
+Performance Optimization:
+The Singleton reduces database connection overhead. In real-world projects, optimize for performance (e.g., indexing databases, caching with Redis/Memcached, lazy loading).
+
+Testing and Debugging:
+We included error handling (try-catch, HTTP status codes) and suggested debugging with logs and error reporting. In real-world projects, use unit tests, integration tests, and CI/CD pipelines.
+
+Documentation and Conventions:
+We used PHPDoc comments and followed PHP naming conventions (e.g., PSR-4 autoloading, camelCase, namespaces). Document your code for maintainability and onboarding new developers.
