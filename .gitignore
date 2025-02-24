@@ -1,0 +1,44 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore environment files (DO NOT commit sensitive credentials)
+.env
+.env.local
+.env.*.local
+
+# Ignore Composer dependencies (vendor should not be committed)
+vendor/
+composer.lock
+
+# Ignore logs and cache
+storage/
+logs/
+*.log
+
+# Ignore database files (if using SQLite)
+database/database.sqlite
+database/*.sqlite
+
+# Ignore XAMPP/MAMP/WAMP configuration files
+xampp/
+mamp/
+wamp/
+
+# Ignore PHPStorm / VS Code / JetBrains project files
+.idea/
+.vscode/
+
+# Ignore node_modules (if frontend dependencies exist)
+node_modules/
+
+# Ignore built assets (if applicable)
+public/build/
+public/storage/
+
+# Ignore PHPUnit test results
+phpunit.xml
+phpunit.xml.dist
+
+# Ignore Laravel specific folders (if using Laravel framework)
+bootstrap/cache/

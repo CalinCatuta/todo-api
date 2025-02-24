@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /todo-api/public/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /todo-api/public/index.php [L]
